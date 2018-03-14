@@ -27,4 +27,6 @@ def quick_sorting(A, start, end):
 A = [7, 2, 1, 6, 8, 5, 3, 4]
 end = len(A)-1
 start = 0
+import pdb
+pdb.set_trace()
 print('quick sorted list is :- ', quick_sorting(A, start, end))

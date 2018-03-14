@@ -23,6 +23,9 @@ def merge(L, R, A):
 
 
 def mergesort(A):
+    import pdb
+    pdb.set_trace()
+    
     l_n = len(A)
     if l_n < 2:
         return A
@@ -35,4 +38,5 @@ def mergesort(A):
     return A
 
 A = [23, 32, 4, 5, 6, 76]
+A = [3, 30, 34, 5, 9]
 print('merge sort sorted list is :-', mergesort(A))
