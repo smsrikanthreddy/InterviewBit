@@ -1,0 +1,2 @@
+def redundant_braces():
+    
