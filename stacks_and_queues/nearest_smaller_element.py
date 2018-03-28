@@ -17,3 +17,29 @@ class Solution:
                 stack.append(A[i])
                 A[i] = stack[-2]
         return A
+
+'''
+class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def prevSmaller(self, A):
+        m = None
+        arr = []
+        
+        for i,v in enumerate(A):
+            if m is None:
+                m = v
+                arr.append(-1)
+                continue
+            elif v <= m:
+                m = v
+                arr.append(-1)
+                continue
+            
+            for j in range(i-1,-1,-1):
+                if A[j] < v:
+                    arr.append(A[j])
+                    break
+
+        return arr
+'''
