@@ -8,13 +8,13 @@ class Solution:
 	    right = []
 	    for i in A:
 	        left.append(i)
-	    for j in range(n-1, -1, -1):
-	        right.append(A[j])
-
+	        
 	    i = 0
+	    j = n -1
 	    while i < n:
-	        if left[i] != right[i]:
+	        if left[i] != left[j]:
 	            return 0
 	        i += 1
+	        j -= 1
 
 	    return 1
