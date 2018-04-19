@@ -16,7 +16,6 @@ def partition(A, start, end):
     return pIndex
 
 def quick_sorting(A, start, end):
-    pivot = A[end]
     if start < end:
         pIndex = partition(A, start, end)
         quick_sorting(A, start, pIndex-1)
@@ -25,6 +24,7 @@ def quick_sorting(A, start, end):
 
 
 A = [7, 2, 1, 6, 8, 5, 3, 4]
+A = [7, 4, 3, 2, 1, 5, 3]
 end = len(A)-1
 start = 0
 import pdb
