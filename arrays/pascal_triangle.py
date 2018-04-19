@@ -1,3 +1,4 @@
+'''
 class Solution:
     # @param A : integer
     # @return a list of list of integers
@@ -14,25 +15,25 @@ class Solution:
                     a[i].append(1)
         return a
 '''
-class Solution:
-    # @param A : integer
-	# @return a list of list of integers
-    def binomialCoeff(self, n, k) :
-        res = 1
-        if (k > n - k) :
-            k = n - k
-        for i in range(0 , k) :
-            res = res * (n - i)
-            res = res // (i + 1)
-        return res
+def binomialCoeff(n1, k) :
+    res = 1
+    if (k > n1 - k) :
+        k = n1 - k
+    for i in range(0 , k) :
+        res = res * (n1 - i)
+        res = res // (i + 1)
+    return res
         
-    def generate(self, A):
-        result = []
-        for line in range(0, A) :
-            res1 = []
-            for i in range(0, line + 1) :
-                res1.append(self.binomialCoeff(line, i))
-            result.append(res1)
-        return result
-         
-'''
+def generate(A):
+    result = []
+    for line in range(0, A) :
+        res1 = []
+        for i in range(0, line + 1) :
+            res1.append(binomialCoeff(line, i))
+        result.append(res1)
+    return result
+
+A = 5
+import pdb
+pdb.set_trace()
+print('pascal traingle :-', generate(A))
