@@ -1,36 +1,27 @@
-class Solution():
-    # @param A : string
-    # @return an integer
-    def isValid(self, A):
-            Open = "({["
-            Close = ")}]"
-            stack = []
-            for char in A :
-                if char in "({[" :
-                   stack.append(char)
-                else :
-                    if len(stack) == 0 :
-                        return 0
-                    else :
-                        top = stack[len(stack) - 1]
-                        if Open.index(top) == Close.index(char) :
-                            stack.pop()
-                        else :
-                            return 0
+def isValid(A):
+    Open = "({["
+    Close = ")}]"
+    stack = []
+    for char in A :
+        if char in "({[" :
+            stack.append(char)
+        else :
             if len(stack) == 0 :
-                return 1
-            else :
                 return 0
+            else :
+                top = stack[len(stack) - 1]
+                if Open.index(top) == Close.index(char) :
+                    stack.pop()
+                else :
+                    return 0
+ 
+    if len(stack) == 0 :
+        return 1
+    else :
+        return 0
 
-
-
-
-
-
-
-
-
-
+A = "(((([{()}[]]{{{[]}}}))))"
+print('vaid parenthesis for {}'.format(A),' is True(1)/False(0) ',isValid(A))
 
 
 
