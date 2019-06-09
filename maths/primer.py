@@ -5,7 +5,7 @@ class Solution:
         if A != 1:
             upperLimit = int(A**0.5)
             for i in xrange(2, upperLimit + 1):
-	        if i < A and A % i == 0:
-                    return 0
+				if i < A and A % i == 0:
+						return 0
             return 1
         return 0

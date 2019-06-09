@@ -14,17 +14,6 @@ def merge_intervals(intervals, new_interval):
     if abc == 0:
         return intervals
     intervals.sort(key=lambda x: x.start)
-    #intervals.sort()
-    '''
-    result = [intervals[0]]
-    for i in xrange(1, len(intervals)):
-        prev, current = result[-1], intervals[i]
-        if current.start <= prev.end: 
-            prev.end = max(prev.end, current.end)
-        else:
-           result.append(current)
-    return result
-    '''
     merged = []
     for interval in intervals:
         if not merged or merged[-1].end < interval.start:
@@ -47,3 +36,35 @@ pdb.set_trace()
 #A = []
 #B = [1,1]
 print('merged intervals are:-', merge_intervals(A, B))
+
+'''
+# Definition for an interval.
+class Interval:
+     def __init__(self, s=0, e=0):
+         self.start = s
+         self.end = e
+
+class Solution:
+    # @param intervals, a list of Intervals
+    # @param new_interval, a Interval
+    # @return a list of Interval
+    def insert(self, intervals, new_interval):
+        
+        abc = len(intervals)
+        intervals.append(new_interval)
+        if abc == 0:
+            return intervals
+        intervals.sort(key=lambda x: x.start)
+        merged = []
+        for interval in intervals:
+            if len(merged) == 0:
+                merged.append(interval)
+            else:
+                if merged[-1].end >interval.start:
+                    val = merged[-1].start
+                    merged.pop()
+                    merged.append((val,interval.end))
+                else:
+                    merged.append(interval)
+        return merged
+'''

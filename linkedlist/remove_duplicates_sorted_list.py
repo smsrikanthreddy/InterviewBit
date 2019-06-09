@@ -17,5 +17,5 @@ class Solution(object):
         while cur != None:
             while cur.next != None and cur.val == cur.next.val:
                 cur.next = cur.next.next
-            cur = cur.next
+			cur = cur.next
         return head
