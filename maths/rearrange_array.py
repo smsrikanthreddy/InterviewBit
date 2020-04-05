@@ -15,4 +15,5 @@ def rearrange_array(A):
 
 A = [3, 2, 0, 1]
 #A = [4,2,0,1,3]
+import pdb; pdb.set_trace()
 print('rearranged array is:-', rearrange_array(A))
