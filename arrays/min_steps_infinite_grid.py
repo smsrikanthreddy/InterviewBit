@@ -1,4 +1,4 @@
-
+'''
 def min_steps_infinite(A, B):
     prev_x, prev_y, total = A[0], B[0], 0
     for curr_x, curr_y in zip(A, B):
@@ -9,6 +9,15 @@ def min_steps_infinite(A, B):
             total += dx
         prev_x, prev_y = curr_x, curr_y
     return total
+'''
+def coverPoints(self, A, B):
+        if len(A) <= 1 and len(B) <= 1:
+            return 0
+        cntr = 0
+        i = 0
+        for i in range(len(A) - 1):
+            cntr += max(abs(A[i + 1] - A[i]), abs(B[i + 1] - B[i]))
+        return cntr
     
 #A = [0,1,1]
 #B = [0,1,2]
