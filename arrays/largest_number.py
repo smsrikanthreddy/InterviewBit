@@ -96,3 +96,31 @@ class Solution:
 	    res = res.lstrip('0')
 	    return res if res else '0'
 '''
+'''
+Date - 02-Oct-2020
+
+class Solution:
+    # @param A : tuple of integers
+    # @return a strings
+    def largestNumber(self, A):
+        A = list(A)
+        n = len(A)
+        def compare(x,y):
+            val1 = str(x)+str(y)
+            val2 = str(y)+str(x)
+            if int(val1)>=int(val2):
+                return x,y
+            else:
+                return y,x
+                
+        for i in range(n-1):
+            for j in range(i+1, n):
+                a, b = compare(A[i], A[j])
+                A[i] = a
+                A[j] = b
+        if A[0]==0:
+            return 0
+        else:
+            return "".join([str(val) for val in A])
+        
+'''

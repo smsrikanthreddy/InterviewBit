@@ -1,4 +1,57 @@
+'''
+class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def plusOne(self, A):
+        n = len(A)
+        A[n-1] += 1
+        carry = A[n-1]/10
+        A[n-1] = A[n-1]%10
 
+        for val in range(n-2,-1,-1):
+            if carry == 1:
+                A[val] += 1
+                carry = A[val]/10
+                A[val] = A[val]%10
+        if carry == 1:
+            A.insert(0,1)
+
+        while True:
+            if A[0] == 0:
+                del A[0]
+            else:
+                return A
+        return A
+
+'''
+'''
+def plusOne(A):
+    if len(A) == 0:
+        return A
+    if A == [0]:
+        return A[0]+1
+    N = len(A)
+    str_val = ""
+    carry = 1
+    for val in range(N, -1, -1):
+        #print(val)
+        if val == 9:
+            carry = 1
+            str_val = str_val + str(0)
+        else:
+            str_val = str_val + str(val + carry)
+            carry = 0
+            str
+    str_val = int(str_val)
+    rev = 0
+
+    while (str_val > 0):
+        a = str_val % 10
+        rev = rev * 10 + a
+        str_val = str_val // 10
+
+    return rev
+'''
 
 def plusOne(A):
     for val in range(len(A)-1,-1,-1):
