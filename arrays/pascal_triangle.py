@@ -24,6 +24,27 @@ import pdb
 pdb.set_trace()
 print(solve(A))
 
+'''
+def solve(self, A):
+        #if A==0:
+        #    return A
+        def binomialCoeff(row, col):
+            res = 1
+            if (col > row - col):
+                col = row - col
+            for i in range(0, col):
+                res = res * (row- i)
+                res = res // (i + 1)
+            return res
+
+        pas_traingle = []
+        for row in range(0, A):
+            res_val = []
+            for col in range(0, row + 1):
+                res_val.append(binomialCoeff(row, col))
+            pas_traingle.append(res_val)
+        return pas_traingle
+'''
 
 
 
