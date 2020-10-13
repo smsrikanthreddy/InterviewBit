@@ -1,4 +1,38 @@
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+class Solution:
+    # @param A : head node of linked list
+    # @return the head node in the linked list
+    def sort_list(self, A):
+        for i in range(1, len(A)):
+            temp = A[i]
+            j = i
+            while j > 0 and A[j - 1] > temp:
+                A[j] = A[j - 1]
+                j -= 1
+            A[j] = temp
+        return A
 
+    def insertionSortList(self, A):
+        head = A
+        if head is None:
+            return head
+        new_head = head
+
+        arr_lst = []
+        while new_head:
+            arr_lst.append(new_head.val)
+            new_head = new_head.next
+        sort_lst = self.sort_list(arr_lst)
+        new_head = head
+        while new_head:
+            new_head.val = sort_lst.pop(0)
+            new_head = new_head.next
+        return head
+'''
 class Node(object):
     def __init__(self, value):
         self.value = value
@@ -63,7 +97,7 @@ import pdb
 pdb.set_trace()
 print('insertion sort linkedlist is:-', print_result(head))
 
-
+'''
 
 
 
