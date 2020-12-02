@@ -7,7 +7,7 @@ class Solution:
                 even += 1
             else:
                 odd += 1
-        if even==n or odd==n:
+        if even == n or odd == n:
             return 0
         return min(even, odd)
 
